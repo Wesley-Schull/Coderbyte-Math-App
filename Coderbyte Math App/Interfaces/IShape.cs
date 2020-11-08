@@ -7,10 +7,10 @@ namespace Coderbyte_Math_App.Interfaces
     interface IShape
     {
         public string Name { get; set; }
-        public float Perimeter { get; set; }
-        public float SurfaceArea { get; set; }
+        public double Perimeter { get; set; }
+        public double SurfaceArea { get; set; }
 
-        int CalculatePerimeter();
-        int CalculateSurfaceArea();
+        void CalculatePerimeter();
+        void CalculateSurfaceArea();
     }
 }

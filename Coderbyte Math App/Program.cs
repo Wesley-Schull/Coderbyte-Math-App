@@ -7,7 +7,7 @@ namespace Coderbyte_Math_App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to Shapeshifter!");
         }
     }
 }

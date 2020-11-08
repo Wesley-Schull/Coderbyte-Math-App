@@ -10,3 +10,6 @@ X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\C
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.dll
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.pdb
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.genruntimeconfig.cache
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Json.Net.dll
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.csproj.CoreCompileInputs.cache
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.csproj.CopyComplete

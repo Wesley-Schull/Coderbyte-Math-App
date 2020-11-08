@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rVx3RO2Hlq/3BIUsAajGUyRijOpM0+TpStmH9q4+z2+kdITjS0em9T3iX5dvB6Tpkv1gQWuLMysxsWSaW7Cf7A==",
+  "success": true,
+  "projectFilePath": "X:\\Code Projects\\Coderbyte-Math-App\\Coderbyte Math App\\Coderbyte Math App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Wes\\.nuget\\packages\\json.net\\1.0.23\\json.net.1.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}

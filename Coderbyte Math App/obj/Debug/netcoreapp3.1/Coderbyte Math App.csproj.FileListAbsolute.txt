@@ -1,0 +1,12 @@
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.exe
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.deps.json
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.runtimeconfig.json
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.runtimeconfig.dev.json
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.dll
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Coderbyte Math App.pdb
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.csprojAssemblyReference.cache
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.AssemblyInfoInputs.cache
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.AssemblyInfo.cs
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.dll
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.pdb
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.genruntimeconfig.cache

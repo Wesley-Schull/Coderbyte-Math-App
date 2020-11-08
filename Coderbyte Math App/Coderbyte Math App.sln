@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coderbyte Math App", "Coderbyte Math App.csproj", "{D0384962-95CF-4767-B0CE-C52F2C5E20CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0384962-95CF-4767-B0CE-C52F2C5E20CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0384962-95CF-4767-B0CE-C52F2C5E20CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0384962-95CF-4767-B0CE-C52F2C5E20CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0384962-95CF-4767-B0CE-C52F2C5E20CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD8CA3B4-A089-41FC-B545-45F5EA873BAB}
+	EndGlobalSection
+EndGlobal

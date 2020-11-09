@@ -60,5 +60,16 @@ namespace Coderbyte_Math_App.Classes
         {
             SurfaceArea = Math.Round((Length * Width), 2);
         }
+
+        /// <summary>
+        /// Method <c>ToShapeString</c> will return a string containing the Name, Length, Width,
+        /// Perimeter, and Surface Area in a readable format.
+        /// </summary>
+        /// <returns></returns>
+        public string ToShapeString()
+        {
+            return ($"Rectangle Name: {Name} | Length: {Length} | Width: {Width} | " +
+                $"Perimeter: {Perimeter} | Surface Area: {SurfaceArea}");
+        }
     }
 }

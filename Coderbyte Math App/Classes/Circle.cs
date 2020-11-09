@@ -59,5 +59,15 @@ namespace Coderbyte_Math_App.Classes
         {
             SurfaceArea = Math.Round((3.14 * Radius * Radius), 2);
         }
+
+        /// <summary>
+        /// Method <c>ToShapeString</c> will return a string containing the Name, Radius,
+        /// Circumference (Perimeter), and Surface Area in a readable format.
+        /// </summary>
+        /// <returns></returns>
+        public string ToShapeString()
+        {
+            return ($"Circle Name: {Name} | Radius: {Radius} | Circumference: {Perimeter} | Surface Area: {SurfaceArea}"); 
+        }
     }
 }

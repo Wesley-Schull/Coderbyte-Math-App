@@ -12,5 +12,6 @@ namespace Coderbyte_Math_App.Interfaces
 
         void CalculatePerimeter();
         void CalculateSurfaceArea();
+        string ToShapeString();
     }
 }

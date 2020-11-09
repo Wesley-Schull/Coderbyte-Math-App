@@ -59,5 +59,15 @@ namespace Coderbyte_Math_App.Classes
         {
             SurfaceArea = Math.Round((Length * Length), 2);
         }
+
+        /// <summary>
+        /// Method <c>ToShapeString</c> will return a string containing the Name, Length, Perimeter,
+        /// and Surface Area in a readable format.
+        /// </summary>
+        /// <returns></returns>
+        public string ToShapeString()
+        {
+            return ($"Square Name: {Name} | Length: {Length} | Perimeter: {Perimeter} | Surface Area: {SurfaceArea}");
+        }
     }
 }

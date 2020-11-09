@@ -57,7 +57,8 @@ namespace Coderbyte_Math_App.Classes
         }
 
         /// <summary>
-        /// Method <c>CalculatePerimeter</c> calculates the perimeter of our input triangle. (a + b + c)
+        /// Method <c>CalculatePerimeter</c> calculates the perimeter of our input triangle. 
+        /// <br/>(a + b + c)
         /// </summary>
         public void CalculatePerimeter()
         {
@@ -65,7 +66,8 @@ namespace Coderbyte_Math_App.Classes
         }
 
         /// <summary>
-        /// Method <c>CalculateSurfaceArea</c> calculates the surface area using Heron's Formula. In the formula, s = 1/2 the triangle's perimeter.
+        /// Method <c>CalculateSurfaceArea</c> calculates the surface area using Heron's Formula.
+        /// In the formula, s = 1/2 the triangle's perimeter.
         /// <br/>s = (a + b + c)/2 
         /// <br/>A = sqrt(s(s - a)(s - b)(s - c))
         /// </summary>
@@ -79,7 +81,8 @@ namespace Coderbyte_Math_App.Classes
         }
 
         /// <summary>
-        /// Method <c>CheckTriangleType</c> checks which sides are (or aren't) equal to one another to determine if the triangle is equilateral, isosceles, or scalene.
+        /// Method <c>CheckTriangleType</c> checks which sides are (or aren't) equal to one another
+        /// to determine if the triangle is equilateral, isosceles, or scalene.
         /// </summary>
         public void CheckTriangleType()
         {
@@ -93,6 +96,17 @@ namespace Coderbyte_Math_App.Classes
             {
                 TriangleType = "Scalene";
             }
+        }
+
+        /// <summary>
+        /// Method <c>ToShapeString</c> will return a string containing the Name, sides A, B and C,
+        /// Triangle Type, Perimeter, and Surface Area in a readable format.
+        /// </summary>
+        /// <returns></returns>
+        public string ToShapeString()
+        {
+            return ($"Triangle Name: {Name} | a: {SideA} | b: {SideB} | c: {SideC} | " +
+                $"Triangle Type: {TriangleType} | Perimeter: {Perimeter} | Surface Area: {SurfaceArea}");
         }
     }
 }

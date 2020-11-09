@@ -1,4 +1,5 @@
-﻿using Coderbyte_Math_App.Interfaces;
+﻿using Coderbyte_Math_App.Exceptions;
+using Coderbyte_Math_App.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,8 +23,23 @@ namespace Coderbyte_Math_App.Classes
         public Rectangle(string name, double length, double width)
         {
             Name = name;
-            Length = length;
-            Width = width;
+            
+            try
+            {
+                if (length <= 0 || width <= 0)
+                {
+                    throw new InvalidMeasurementException("Measurements must be greater than 0.");
+                }
+                else
+                {
+                    Length = length;
+                    Width = width;
+                }
+            } 
+            catch (Exception e)
+            {
+                Console.WriteLine("Input error: {0}", e.Message);
+            }
 
             CalculatePerimeter();
             CalculateSurfaceArea();
@@ -34,7 +50,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculatePerimeter()
         {
-            Perimeter = (Length + Width) * 2;
+            Perimeter = Math.Round(((Length + Width) * 2), 2);
         }
 
         /// <summary>
@@ -42,7 +58,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculateSurfaceArea()
         {
-            SurfaceArea = Length * Width;
+            SurfaceArea = Math.Round((Length * Width), 2);
         }
     }
 }

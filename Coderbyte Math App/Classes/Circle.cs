@@ -23,15 +23,7 @@ namespace Coderbyte_Math_App.Classes
         public Circle(string name, double radius)
         {
             Name = name;
-            //if (radius <= 0)
-            //{
-            //    Console.WriteLine("Exception in Circle: " + )
-            //    throw new InvalidMeasurementException("Measurements must be greater than 0.");
-            //}
-            //else
-            //{
-            //    Radius = radius;
-            //}
+
             try
             {
                 if (radius <= 0) 

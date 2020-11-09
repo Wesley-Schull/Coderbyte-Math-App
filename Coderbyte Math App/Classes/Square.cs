@@ -1,4 +1,5 @@
-﻿using Coderbyte_Math_App.Interfaces;
+﻿using Coderbyte_Math_App.Exceptions;
+using Coderbyte_Math_App.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +21,22 @@ namespace Coderbyte_Math_App.Classes
         public Square(string name, double length)
         {
             Name = name;
-            Length = length;
+
+            try
+            {
+                if (length <= 0)
+                {
+                    throw new InvalidMeasurementException("Measurements must be greater than 0.");
+                }
+                else
+                {
+                    Length = length;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Input error: {0}", e.Message);
+            }
 
             CalculatePerimeter();
             CalculateSurfaceArea();
@@ -32,7 +48,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculatePerimeter()
         {
-            Perimeter = Length * 4;
+            Perimeter = Math.Round((Length * 4), 2);
         }
 
         /// <summary>
@@ -41,7 +57,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculateSurfaceArea()
         {
-            SurfaceArea = Length * Length;
+            SurfaceArea = Math.Round((Length * Length), 2);
         }
     }
 }

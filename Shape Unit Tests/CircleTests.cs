@@ -8,12 +8,12 @@ namespace Shape_Unit_Tests
     public class CircleTests
     {
         [TestMethod]
-        public void Circle_CalculatesCorrectPerimeter()
+        public void Circle_CalculatesCorrectCircumference()
         {
             // Arrange
             double radius = 10;
             double expected = 62.8;
-            Circle testCircle = new Circle("Correct Perimeter Circle", radius);
+            Circle testCircle = new Circle("Correct Circumference Circle", radius);
 
             // Act
             testCircle.CalculatePerimeter();

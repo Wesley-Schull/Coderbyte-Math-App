@@ -28,6 +28,7 @@ namespace Coderbyte_Math_App.Classes
         public Triangle(string name, double a, double b, double c)
         {
             Name = name;
+
             try
             {
                 if (a >= (b + c) || b >= (a + c) || c >= (a + b))

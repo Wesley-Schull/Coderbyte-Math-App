@@ -10,8 +10,4 @@
     <PackageReference Include="Json.Net" Version="1.0.23" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Tests\" />
-  </ItemGroup>
-
 </Project>

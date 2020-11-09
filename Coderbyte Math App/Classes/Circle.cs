@@ -1,12 +1,14 @@
-﻿using Coderbyte_Math_App.Interfaces;
+﻿using Coderbyte_Math_App.Exceptions;
+using Coderbyte_Math_App.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using static Coderbyte_Math_App.Interfaces.IShape;
 
 namespace Coderbyte_Math_App.Classes
 {
-    class Circle : IShape
+    public class Circle : IShape
     {
         public double Radius { get; set; }
         public string Name { get; set; }
@@ -21,7 +23,30 @@ namespace Coderbyte_Math_App.Classes
         public Circle(string name, double radius)
         {
             Name = name;
-            Radius = radius;
+            //if (radius <= 0)
+            //{
+            //    Console.WriteLine("Exception in Circle: " + )
+            //    throw new InvalidMeasurementException("Measurements must be greater than 0.");
+            //}
+            //else
+            //{
+            //    Radius = radius;
+            //}
+            try
+            {
+                if (radius <= 0) 
+                {
+                    throw new InvalidMeasurementException("Measurements must be greater than 0.");
+                }
+                else
+                {
+                    Radius = radius;
+                }
+            } 
+            catch (Exception e)
+            {
+                Console.WriteLine("Input Error: {0}", e.Message);
+            }
 
             CalculatePerimeter();
             CalculateSurfaceArea();
@@ -32,7 +57,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculatePerimeter()
         {
-            Perimeter = 2 * 3.14 * Radius;
+            Perimeter = Math.Round((2 * 3.14 * Radius), 2);
         }
 
         /// <summary>
@@ -40,7 +65,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculateSurfaceArea()
         {
-            SurfaceArea = 3.14 * Radius * Radius;
+            SurfaceArea = Math.Round((3.14 * Radius * Radius), 2);
         }
     }
 }

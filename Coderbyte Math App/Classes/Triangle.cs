@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Coderbyte_Math_App.Classes
@@ -34,14 +35,28 @@ namespace Coderbyte_Math_App.Classes
             SurfaceArea = Math.Sqrt(s * (s - SideA) * (s - SideB) * (s - SideC));
         }
 
-        public Triangle(string name,  string type, double a, double b, double c)
+        private void CheckTriangleType()
+        {
+            if (SideA == SideB && SideB == SideC)
+            {
+                TriangleType = "Equilateral";
+            } else if (SideA == SideB || SideB == SideC || SideC == SideA)
+            {
+                TriangleType = "Isosceles";
+            } else
+            {
+                TriangleType = "Scalene";
+            }
+        }
+
+        public Triangle(string name, double a, double b, double c)
         {
             Name = name;
-            TriangleType = type;
             SideA = a;
             SideB = b;
             SideC = c;
 
+            CheckTriangleType();
             CalculatePerimeter();
             CalculateSurfaceArea();
         }

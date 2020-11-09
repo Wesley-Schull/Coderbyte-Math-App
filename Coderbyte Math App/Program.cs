@@ -1,4 +1,5 @@
 ﻿using System;
+using Coderbyte_Math_App.Classes;
 using Json.Net;
 
 namespace Coderbyte_Math_App

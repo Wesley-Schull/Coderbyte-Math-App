@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Coderbyte_Math_App.Interfaces
 {
-    internal interface IQuadrilateral : IShape
+    public interface IQuadrilateral : IShape
     {
 
     }

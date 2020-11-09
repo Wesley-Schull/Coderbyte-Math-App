@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Coderbyte_Math_App.Interfaces
 {
-    interface IShape
+    public interface IShape
     {
         public string Name { get; set; }
         public double Perimeter { get; set; }

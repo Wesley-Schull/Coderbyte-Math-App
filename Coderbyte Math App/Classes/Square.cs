@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Coderbyte_Math_App.Classes
 {
-    class Square : IQuadrilateral
+    public class Square : IQuadrilateral
     {
         public string Name { get; set; }
         public double Perimeter { get; set; }

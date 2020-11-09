@@ -1,4 +1,5 @@
-﻿using Coderbyte_Math_App.Interfaces;
+﻿using Coderbyte_Math_App.Exceptions;
+using Coderbyte_Math_App.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Coderbyte_Math_App.Classes
 {
-    class Triangle : IShape
+    public class Triangle : IShape
     {
         public string Name { get; set; }
         public double Perimeter { get; set; }
@@ -27,9 +28,27 @@ namespace Coderbyte_Math_App.Classes
         public Triangle(string name, double a, double b, double c)
         {
             Name = name;
-            SideA = a;
-            SideB = b;
-            SideC = c;
+            try
+            {
+                if (a >= (b + c) || b >= (a + c) || c >= (a + b))
+                {
+                    throw new ImpossibleTriangleException("No one side can be longer than both of the other sides on a triangle.");
+                }
+                else if (a <= 0 || b <= 0 || c <= 0)
+                {
+                    throw new InvalidMeasurementException("Measurements must be greater than 0.");
+                }
+                else
+                {
+                    SideA = a;
+                    SideB = b;
+                    SideC = c;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Input error: {0}", e.Message);
+            }
 
             CheckTriangleType();
             CalculatePerimeter();
@@ -41,7 +60,7 @@ namespace Coderbyte_Math_App.Classes
         /// </summary>
         public void CalculatePerimeter()
         {
-            Perimeter = SideA + SideB + SideC;
+            Perimeter = Math.Round((SideA + SideB + SideC), 2);
         }
 
         /// <summary>
@@ -55,13 +74,13 @@ namespace Coderbyte_Math_App.Classes
             
             double s = Perimeter / 2;
 
-            SurfaceArea = Math.Sqrt(s * (s - SideA) * (s - SideB) * (s - SideC));
+            SurfaceArea = Math.Round(Math.Sqrt(s * (s - SideA) * (s - SideB) * (s - SideC)), 2);
         }
 
         /// <summary>
         /// Method <c>CheckTriangleType</c> checks which sides are (or aren't) equal to one another to determine if the triangle is equilateral, isosceles, or scalene.
         /// </summary>
-        private void CheckTriangleType()
+        public void CheckTriangleType()
         {
             if (SideA == SideB && SideB == SideC)
             {

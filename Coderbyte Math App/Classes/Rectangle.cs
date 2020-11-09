@@ -13,16 +13,12 @@ namespace Coderbyte_Math_App.Classes
         public double Length { get; set; }
         public double Width { get; set; }
 
-        public void CalculatePerimeter()
-        {
-            Perimeter = (Length * 2) + (Width * 2);
-        }
-
-        public void CalculateSurfaceArea()
-        {
-            SurfaceArea = Length * Width;
-        }
-
+        /// <summary>
+        /// Class <c>Rectangle</c> models a rectangle in a two-dimensional plane.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="length"></param>
+        /// <param name="width"></param>
         public Rectangle(string name, double length, double width)
         {
             Name = name;
@@ -31,6 +27,22 @@ namespace Coderbyte_Math_App.Classes
 
             CalculatePerimeter();
             CalculateSurfaceArea();
+        }
+
+        /// <summary>
+        /// Method <c>CalculatePerimeter</c> calculates the perimeter of our rectangle. (P = (L + W) * 2)
+        /// </summary>
+        public void CalculatePerimeter()
+        {
+            Perimeter = (Length + Width) * 2;
+        }
+
+        /// <summary>
+        /// Method <c>CalculateSurfaceArea</c> calculates the surface area of our rectangle. (A = L * W)
+        /// </summary>
+        public void CalculateSurfaceArea()
+        {
+            SurfaceArea = Length * Width;
         }
     }
 }

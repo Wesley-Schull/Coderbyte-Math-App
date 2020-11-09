@@ -23,7 +23,7 @@ namespace Shape_Unit_Tests
         }
 
         [TestMethod]
-        public void testRectangle_CalculatesCorrectSurfaceArea()
+        public void Square_CalculatesCorrectSurfaceArea()
         {
             // Arrange
             double length = 5.25;
@@ -38,7 +38,7 @@ namespace Shape_Unit_Tests
         }
 
         [TestMethod]
-        public void Circle_MeasurementsCannotBeNonPositive()
+        public void Square_MeasurementsCannotBeNonPositive()
         {
             // Arrange
             double length = -500;
@@ -49,6 +49,21 @@ namespace Shape_Unit_Tests
 
             // Assert
             double actual = testSquare.Length;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Square_ToShapeStringReturnsCorrectInformation()
+        {
+            // Arrange
+            double length = 10;
+            string expected = $"Square Name: ToShapeString Test Square | Length: {length} | Perimeter: 40 | Surface Area: 100";
+
+            // Act
+            Square testSquare = new Square("ToShapeString Test Square", length);
+
+            // Assert
+            string actual = testSquare.ToShapeString();
             Assert.AreEqual(expected, actual);
         }
     }

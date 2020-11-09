@@ -24,7 +24,7 @@ namespace Shape_Unit_Tests
         }
 
         [TestMethod]
-        public void testRectangle_CalculatesCorrectSurfaceArea()
+        public void Rectangle_CalculatesCorrectSurfaceArea()
         {
             // Arrange
             double length = 5;
@@ -40,7 +40,7 @@ namespace Shape_Unit_Tests
         }
 
         [TestMethod]
-        public void Circle_MeasurementsCannotBeNonPositive()
+        public void Rectangle_MeasurementsCannotBeNonPositive()
         {
             // Arrange
             double length = 0;
@@ -52,6 +52,22 @@ namespace Shape_Unit_Tests
 
             // Assert
             double actual = testRectangle.Width;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Rectangle_ToShapeStringReturnsCorrectInformation()
+        {
+            // Arrange
+            double length = 10;
+            double width = 5;
+            string expected = $"Rectangle Name: ToShapeString Test Rectangle | Length: {length} | Width: {width} | Perimeter: 30 | Surface Area: 50";
+
+            // Act
+            Rectangle testRectangle = new Rectangle("ToShapeString Test Rectangle", length, width);
+
+            // Assert
+            string actual = testRectangle.ToShapeString();
             Assert.AreEqual(expected, actual);
         }
     }

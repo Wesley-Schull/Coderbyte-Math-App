@@ -133,5 +133,23 @@ namespace Shape_Unit_Tests
             double actual = testTriangle.SideA; // If any measurements are non-positive (x <= 0), no measurements are set and remain at 0
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Triangle_ToShapeStringReturnsCorrectInformation()
+        {
+            // Arrange
+            double a = 10;
+            double b = 15;
+            double c = 20;
+            string expected = $"Triangle Name: ToShapeString Test Triangle | a: {a} | b: {b} | c: {c} | " +
+                $"Triangle Type: Scalene | Perimeter: 45 | Surface Area: 72.62";
+
+            // Act
+            Triangle testTriangle = new Triangle("ToShapeString Test Triangle", a, b, c);
+
+            // Assert
+            string actual = testTriangle.ToShapeString();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

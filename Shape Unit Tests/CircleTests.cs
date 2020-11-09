@@ -53,5 +53,20 @@ namespace Shape_Unit_Tests
             double actual = testCircle.Radius;
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Circle_ToShapeStringReturnsCorrectInformation()
+        {
+            // Arrange
+            double radius = 10;
+            string expected = $"Circle Name: ToShapeString Test Circle | Radius: {radius} | Circumference: 62.8 | Surface Area: 314";
+
+            // Act
+            Circle testCircle = new Circle("ToShapeString Test Circle", radius);
+
+            // Assert
+            string actual = testCircle.ToShapeString();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

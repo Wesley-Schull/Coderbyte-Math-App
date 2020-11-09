@@ -26,7 +26,7 @@ namespace Shape_Unit_Tests
         public void Collection_CanStoreAnyTypeOfShape()
         {
             // Arrange
-            Collection testCollection = new Collection("Shape Storage Test Collection");
+            ShapeCollection testCollection = new ShapeCollection("Shape Storage Test Collection");
             double expected = 12.56;
 
             // Act
@@ -52,7 +52,7 @@ namespace Shape_Unit_Tests
         public void Collection_SortByPerimeterAscendingWorks()
         {
             // Arrange
-            Collection testCollection = new Collection("Ascending Perimeter Sort Test Collection");
+            ShapeCollection testCollection = new ShapeCollection("Ascending Perimeter Sort Test Collection");
             string expected = "Small Circle";
             testCollection.ListOfShapes.AddRange(new List<IShape>()
             {
@@ -79,7 +79,7 @@ namespace Shape_Unit_Tests
         public void Collection_SortByPerimeterDescendingWorks()
         {
             // Arrange
-            Collection testCollection = new Collection("Descending Perimeter Sort Test Collection");
+            ShapeCollection testCollection = new ShapeCollection("Descending Perimeter Sort Test Collection");
             string expected = "Big Circle";
             testCollection.ListOfShapes.AddRange(new List<IShape>()
             {
@@ -106,7 +106,7 @@ namespace Shape_Unit_Tests
         public void Collection_SortBySurfaceAreaAscendingWorks()
         {
             // Arrange
-            Collection testCollection = new Collection("Ascending Surface Area Sort Test Collection");
+            ShapeCollection testCollection = new ShapeCollection("Ascending Surface Area Sort Test Collection");
             string expected = "Small Circle";
             testCollection.ListOfShapes.AddRange(new List<IShape>()
             {
@@ -133,7 +133,7 @@ namespace Shape_Unit_Tests
         public void Collection_SortBySurfaceAreaDescendingWorks()
         {
             // Arrange
-            Collection testCollection = new Collection("Descending Surface Area Sort Test Collection");
+            ShapeCollection testCollection = new ShapeCollection("Descending Surface Area Sort Test Collection");
             string expected = "Big Circle";
             testCollection.ListOfShapes.AddRange(new List<IShape>()
             {

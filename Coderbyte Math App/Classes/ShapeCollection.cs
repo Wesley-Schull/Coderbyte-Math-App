@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Coderbyte_Math_App.Classes
 {
-    public class Collection
+    public class ShapeCollection
     {
         public string Name { get; set; }
         public List<IShape> ListOfShapes { get; set; }
 
-        public Collection(string name)
+        public ShapeCollection(string name)
         {
             Name = name;
             ListOfShapes = new List<IShape>();

@@ -1,0 +1,98 @@
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Shape Unit Tests.deps.json
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Shape Unit Tests.runtimeconfig.json
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Shape Unit Tests.runtimeconfig.dev.json
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Shape Unit Tests.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Shape Unit Tests.pdb
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CommunicationUtilities.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CrossPlatEngine.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.Utilities.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\testhost.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.AssemblyInfoInputs.cache
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.AssemblyInfo.cs
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.csproj.CoreCompileInputs.cache
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.csproj.CopyComplete
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.pdb
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.genruntimeconfig.cache
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Coderbyte Math App.exe
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Json.Net.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Coderbyte Math App.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Coderbyte Math App.pdb
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.csprojAssemblyReference.cache

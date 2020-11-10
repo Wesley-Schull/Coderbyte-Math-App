@@ -10,8 +10,8 @@ namespace Coderbyte_Math_App.Classes
 {
     public class Circle : IShape
     {
-        public double Radius { get; set; }
         public string Name { get; set; }
+        public double Radius { get; set; }
         public double Perimeter { get; set; }
         public double SurfaceArea { get; set; }
 

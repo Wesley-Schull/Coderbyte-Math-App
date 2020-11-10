@@ -46,3 +46,5 @@ X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\M
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+X:\Code Projects\Coderbyte-Math-App\Coderbyte Math App\obj\Debug\netcoreapp3.1\Coderbyte Math App.csproj.CoreCompileInputs.cache

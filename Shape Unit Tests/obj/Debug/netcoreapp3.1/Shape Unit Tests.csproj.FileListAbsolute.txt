@@ -96,3 +96,37 @@ X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Jso
 X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Coderbyte Math App.dll
 X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Coderbyte Math App.pdb
 X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\obj\Debug\netcoreapp3.1\Shape Unit Tests.csprojAssemblyReference.cache
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.CommandLine.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Debug.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Serilog.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+X:\Code Projects\Coderbyte-Math-App\Shape Unit Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll

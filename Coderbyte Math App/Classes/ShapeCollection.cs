@@ -45,5 +45,30 @@ namespace Coderbyte_Math_App.Classes
                 ListOfShapes.Reverse();
             }
         }
+
+        /// <summary>
+        /// Method <c>ToCollectionString</c> returns all of the shapes contained within the
+        /// collection (each using their ToShapeString methods). If the ListOfShapes is empty,
+        /// the method will say that it's empty.
+        /// </summary>
+        /// <returns></returns>
+        public string ToCollectionString()
+        {
+            string output = $"Collection {Name}:";
+
+            if (ListOfShapes.Count > 0)
+            {
+                foreach (IShape shape in this.ListOfShapes)
+                {
+                    output += $"\n{shape.ToShapeString()}";
+                }
+            }
+            else
+            {
+                output += $" It appears {Name} is empty...";
+            }
+
+            return output;
+        }
     }
 }

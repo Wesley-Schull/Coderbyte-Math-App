@@ -17,8 +17,6 @@ namespace Coderbyte_Math_App
     {
         static void Main(string[] args)
         {
-            //ShapeCollection collection = new ShapeCollection("mock");
-
             List<IShape> shapes = new List<IShape>();
             IShape shape;
             var filesDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\\Files\\");
@@ -27,9 +25,6 @@ namespace Coderbyte_Math_App
             string fileString = "";
             string input = "";
             bool initialLoadLoop = true;
-
-            // Uncomment the line below to fill the shapes collection with mock data. Useful to test making files.
-            //MockShapeCollection(shapes);
 
             Console.WriteLine("Welcome to the Coderbyte Math App!");
             

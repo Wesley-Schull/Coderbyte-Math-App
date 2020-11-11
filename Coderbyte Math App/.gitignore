@@ -1,1 +1,2 @@
-#/bin/Debug/netcoreapp3.1/Files/*.json
+# ignore all .json save files for the program
+Files/**/*.json

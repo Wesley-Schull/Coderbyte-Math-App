@@ -1,14 +1,24 @@
 [
   {
+    "$type": "Coderbyte_Math_App.Classes.Triangle, Coderbyte Math App",
+    "Name": "testc",
+    "Perimeter": 9.0,
+    "SurfaceArea": 2.9,
+    "TriangleType": "Scalene",
+    "SideA": 2.0,
+    "SideB": 3.0,
+    "SideC": 4.0
+  },
+  {
     "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
-    "Name": "testa",
+    "Name": "testb",
     "Radius": 1.0,
     "Perimeter": 6.28,
     "SurfaceArea": 3.14
   },
   {
     "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
-    "Name": "testb",
+    "Name": "testa",
     "Radius": 1.0,
     "Perimeter": 6.28,
     "SurfaceArea": 3.14

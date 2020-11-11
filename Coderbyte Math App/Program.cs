@@ -94,9 +94,9 @@ namespace Coderbyte_Math_App
                                                     {
                                                         case "Y":
                                                         case "y":
-                                                            Console.WriteLine($"Deleting {fileName}.json...");
+                                                            Console.Write($"Deleting {fileName}.json...");
                                                             File.Delete($@"{filesDir}\{fileName}");
-                                                            Console.Write("Success!");
+                                                            Console.WriteLine("Success!");
 
                                                             deleteEmptyFileLoop = !deleteEmptyFileLoop;
                                                             break;
@@ -403,9 +403,9 @@ namespace Coderbyte_Math_App
                                                     {
                                                         case "Y":
                                                         case "y":
-                                                            Console.WriteLine($"Overwriting {tempFileName}.json... ");
+                                                            Console.Write($"Overwriting {tempFileName}.json... ");
                                                             SaveFile(shapes, tempFileName);
-                                                            Console.Write("Success!");
+                                                            Console.WriteLine("Success!");
 
                                                             overwriteLoop = !overwriteLoop;
                                                             break;
@@ -423,9 +423,9 @@ namespace Coderbyte_Math_App
                                             }
                                             else
                                             {
-                                                Console.WriteLine($"Creating new file: {input}.json... ");
+                                                Console.Write($"Creating new file: {input}.json... ");
                                                 File.Create($@"{filesDir}\{input}");
-                                                Console.Write("Success!");
+                                                Console.WriteLine("Success!");
                                             }
                                         }
 
@@ -557,12 +557,12 @@ namespace Coderbyte_Math_App
                                         if (Convert.ToInt32(input) < files.Length)
                                         {
                                             fileName = files[Convert.ToInt32(input)].Name;
-                                            Console.WriteLine($"Saving to {fileName}... ");
+                                            Console.Write($"Saving to {fileName}... ");
 
                                             SaveFile(shapes, $"{fileName}");
                                             fileString = LoadFile(fileName);
 
-                                            Console.Write("Success!");
+                                            Console.WriteLine("Success!");
 
                                             saveFileLoop = !saveFileLoop;
                                             input = "";
@@ -670,9 +670,9 @@ namespace Coderbyte_Math_App
             {
                 case "Y":
                 case "y":
-                    Console.WriteLine("Saving...");
+                    Console.Write("Saving...");
                     shapes.Add(shape);
-                    Console.Write("Success!");
+                    Console.WriteLine("Success!");
                     break;
                 case "N":
                 case "n":

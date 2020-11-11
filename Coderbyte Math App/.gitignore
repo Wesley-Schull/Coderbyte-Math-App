@@ -1,0 +1,2 @@
+# ignore all .json save files for the program
+Files/**/*.json

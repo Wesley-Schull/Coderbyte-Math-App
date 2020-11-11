@@ -1,0 +1,41 @@
+[
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "testRIsS",
+    "Perimeter": 16.0,
+    "SurfaceArea": 16.0,
+    "Length": 4.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Rectangle, Coderbyte Math App",
+    "Name": "testR",
+    "Perimeter": 10.0,
+    "SurfaceArea": 6.0,
+    "Length": 3.0,
+    "Width": 2.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Triangle, Coderbyte Math App",
+    "Name": "testT",
+    "Perimeter": 9.0,
+    "SurfaceArea": 2.9,
+    "TriangleType": "Scalene",
+    "SideA": 2.0,
+    "SideB": 3.0,
+    "SideC": 4.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "testS",
+    "Perimeter": 8.0,
+    "SurfaceArea": 4.0,
+    "Length": 2.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "testC",
+    "Radius": 1.0,
+    "Perimeter": 6.28,
+    "SurfaceArea": 3.14
+  }
+]

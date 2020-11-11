@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using Coderbyte_Math_App.Classes;
 using Coderbyte_Math_App.Interfaces;
 using Json.Net;
@@ -27,13 +28,15 @@ namespace Coderbyte_Math_App
             string input = "";
             bool initialLoadLoop = true;
 
-            // Uncomment the line below to fill the shapes collection with mock data. Useful to test files.
-            MockShapeCollection(shapes);
+            // Uncomment the line below to fill the shapes collection with mock data. Useful to test making files.
+            //MockShapeCollection(shapes);
 
             Console.WriteLine("Welcome to the Coderbyte Math App!");
             
             while (input != "0")
             {
+                files = filesDir.GetFiles("*.json");
+
                 while (initialLoadLoop)
                 {
 
@@ -52,10 +55,18 @@ namespace Coderbyte_Math_App
 
                                 for (int i = 0; i < files.Length; i++)
                                 {
-                                    Console.WriteLine($@"{i}. {files[i].Name}");
+                                    if (files[i].Name == fileName)
+                                    {
+                                        Console.WriteLine($@"{i}. {files[i].Name} <-- Current File");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($@"{i}. {files[i].Name}");
+                                    }
                                 }
 
                                 input = Console.ReadLine();
+                                
                                 try
                                 {
                                     if (Convert.ToInt32(input) < files.Length)
@@ -64,8 +75,10 @@ namespace Coderbyte_Math_App
                                         Console.WriteLine($"Loading {fileName}...");
 
                                         fileString = LoadFile(fileName);
-
-                                        Console.WriteLine(fileString);
+                                        shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
+                                        {
+                                            TypeNameHandling = TypeNameHandling.Objects
+                                        });
 
                                         switch (fileString)
                                         {
@@ -116,7 +129,7 @@ namespace Coderbyte_Math_App
                                 }
                                 catch (Exception e)
                                 {
-                                    Console.WriteLine("Sorry, we can only take numeric inputs for this.\n{0}", e.Message);
+                                    Console.WriteLine("Sorry, that input didn't work...\n{0}", e.Message);
                                 }
                                 #endregion
                                 break;
@@ -130,9 +143,6 @@ namespace Coderbyte_Math_App
                                 break;
                         }
                     }
-
-
-
                 }
 
                 Console.WriteLine("\n\nWhat would you like to do?\n" +
@@ -141,9 +151,10 @@ namespace Coderbyte_Math_App
                     "\n2. Create a new shape" +
                     "\n3. View the current collection" +
                     "\n4. Sort current collection" +
-                    "\n5. Help" +
-                    "\n6. Load file" +
-                    "\n7. Save file");
+                    "\n5. Load file" +
+                    "\n6. Save file" +
+                    "\n7. Delete file" +
+                    "\n8. Help");
 
                 input = Console.ReadLine();
 
@@ -153,11 +164,21 @@ namespace Coderbyte_Math_App
                         Console.WriteLine("See you next time!");
                         break;
                     case "1":
+                        #region new shapes list
                         shapes = new List<IShape>();
 
-                        Console.WriteLine($"The new list has been created!");
+                        Console.WriteLine($"The new list has been created! Just know" +
+                                          $"\nthat if you save your current file, the" +
+                                          $"\nentire previous list will be replaced by" +
+                                          $"\nthis new one." +
+                                          $"\n" +
+                                          $"\nIf you would like to go back to the old" +
+                                          $"\nlist, simple load this file again: it'll" +
+                                          $"\nbe marked when you go to Load file!");
+                        #endregion
                         break;
                     case "2":
+                        #region new shape
                         Console.WriteLine("What kind of shape are we making?" +
                             "\nC - Circle" +
                             "\nS - Square" +
@@ -223,17 +244,25 @@ namespace Coderbyte_Math_App
                                 #region triangle
                                 Console.WriteLine("What would you like to call this triangle?");
                                 string t_name = Console.ReadLine();
+                                bool triangleInvalid = true;
 
-                                Console.WriteLine("Side A:");
-                                double a = Convert.ToDouble(Console.ReadLine());
-                                Console.WriteLine("Side B:");
-                                double b = Convert.ToDouble(Console.ReadLine());
-                                Console.WriteLine("Side C:");
-                                double c = Convert.ToDouble(Console.ReadLine());
+                                while (triangleInvalid)
+                                {
+                                    Console.WriteLine("Side A:");
+                                    double a = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Side B:");
+                                    double b = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Side C:");
+                                    double c = Convert.ToDouble(Console.ReadLine());
 
-                                shape = new Triangle(t_name, a, b, c);
+                                    shape = new Triangle(t_name, a, b, c);
 
-                                if (a > 0 && b > 0 && c > 0) AddShapeToListCheck(shape, shapes);
+                                    if (a > 0 && b > 0 && c > 0 && a <= (b + c) && b <= (a + c) && c <= (a + b))
+                                    {
+                                        AddShapeToListCheck(shape, shapes);
+                                        triangleInvalid = !triangleInvalid;
+                                    }
+                                }
                                 #endregion
                                 break;
                             default:
@@ -241,8 +270,10 @@ namespace Coderbyte_Math_App
                                 break;
 
                         }
+                        #endregion
                         break;
                     case "3":
+                        #region view shapes
                         Console.WriteLine($"Here is your current collection:\n");
 
                         if (shapes.Count > 0)
@@ -257,8 +288,10 @@ namespace Coderbyte_Math_App
                             Console.Write("It appears your collection is empty at the moment." +
                                 "\nWhy not add some shapes to it?");
                         }
+                        #endregion
                         break;
                     case "4":
+                        #region sort
                         Console.WriteLine("What are we sorting by?" +
                             "\nP - Perimeter" +
                             "\nA - Surface Area");
@@ -332,95 +365,130 @@ namespace Coderbyte_Math_App
                                 Console.WriteLine("Invalid input");
                                 break;
                         }
-                        break;
-                    case "5":
-                        #region help dialogue
-                        Console.WriteLine("Here are helpful things to know!\n" +
-                            "\nIn this application, we refer to a group of shapes as a \"Collection\"." +
-                            "\nWe keep a collection of shapes that we can save into a save file (TODO)" +
-                            "\nso we may act on them later.\n" +
-                            "\nIt's also worth noting that you don't have to enter the perimeter or" +
-                            "\nthe surface area of any of the shapes! The CLI will guide you through" +
-                            "\nthe process to create each one.");
                         #endregion
                         break;
-                    case "6":
-                        #region save file
-                        bool loop = true;
-                        while (loop)
+                    case "5":
+                        #region load file
+                        bool loadFileLoop = true;
+                        while (loadFileLoop)
                         {
-                            Console.WriteLine("Would you like to save your work? (Y/N)");
+                            Console.WriteLine("Would you like to save your work before loading up" +
+                                "\nanother file? (Y/N)" +
+                                "\n(NOTE: This will overwrite the file you currently have loaded.)");
                             input = Console.ReadLine();
 
-                            switch (input)
+                            bool saveWorkLoop = true;
+
+                            while (saveWorkLoop)
                             {
-                                case "Y":
-                                case "y":
-                                    if (fileName == "")
-                                    {
-                                        Console.WriteLine("It appears we aren't working in a loaded save file." +
-                                            "\nLet's create a new one!" +
-                                            "\nWhat would you like to call this new file?");
-                                        input = Console.ReadLine();
-                                        if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}\{input}.json"))
+                                switch (input)
+                                {
+                                    case "Y":
+                                    case "y":
+                                        if (fileName == "")
                                         {
-                                            bool overwriteLoop = true;
-                                            var tempFileName = input;
+                                            Console.WriteLine("It appears we aren't working in a loaded save file." +
+                                                "\nLet's create a new one!" +
+                                                "\nWhat would you like to call this new file?");
+                                            input = Console.ReadLine();
 
-                                            while (overwriteLoop)
+                                            if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}\{input}.json"))
                                             {
-                                                Console.WriteLine($"It looks like {input}.json already exists!" +
-                                                    $"\nOverwrite this file? (Y/N)");
+                                                bool overwriteLoop = true;
+                                                var tempFileName = input;
 
-                                                input = Console.ReadLine();
-
-                                                switch (input)
+                                                while (overwriteLoop)
                                                 {
-                                                    case "Y":
-                                                    case "y":
-                                                        Console.WriteLine($"Overwriting {tempFileName}.json... ");
-                                                        SaveFile(shapes, tempFileName);
-                                                        Console.Write("Success!");
+                                                    Console.WriteLine($"It looks like {input}.json already exists!" +
+                                                        $"\nOverwrite this file? (Y/N)");
 
-                                                        overwriteLoop = !overwriteLoop;
-                                                        break;
-                                                    case "N":
-                                                    case "n":
-                                                        Console.WriteLine("No worries, we just need to use a different name!");
+                                                    input = Console.ReadLine();
 
-                                                        overwriteLoop = !overwriteLoop;
-                                                        break;
-                                                    default:
-                                                        Console.WriteLine("Invalid input");
-                                                        break;
+                                                    switch (input)
+                                                    {
+                                                        case "Y":
+                                                        case "y":
+                                                            Console.WriteLine($"Overwriting {tempFileName}.json... ");
+                                                            SaveFile(shapes, tempFileName);
+                                                            Console.Write("Success!");
+
+                                                            overwriteLoop = !overwriteLoop;
+                                                            break;
+                                                        case "N":
+                                                        case "n":
+                                                            Console.WriteLine("No worries, we just need to use a different name!");
+
+                                                            overwriteLoop = !overwriteLoop;
+                                                            break;
+                                                        default:
+                                                            Console.WriteLine("Invalid input");
+                                                            break;
+                                                    }
                                                 }
                                             }
+                                            else
+                                            {
+                                                Console.WriteLine($"Creating new file: {input}.json... ");
+                                                File.Create($@"{filesDir}\{input}");
+                                                Console.Write("Success!");
+                                            }
                                         }
-                                        else
-                                        {
-                                            Console.WriteLine($"Creating new file: {input}.json... ");
-                                            File.Create($@"{filesDir}\{input}");
-                                            Console.Write("Success!");
-                                        }
-                                    }
 
-                                    loop = !loop;
-                                    SaveFile(shapes, fileName);
-                                    break;
-                                case "N":
-                                case "n":
-                                    loop = !loop;
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid input");
-                                    break;
+                                        SaveFile(shapes, fileName);
+                                        saveWorkLoop = !saveWorkLoop;
+                                        break;
+                                    case "N":
+                                    case "n":
+                                        saveWorkLoop = !saveWorkLoop;
+                                        break;
+                                    default:
+                                        Console.WriteLine("Invalid input");
+                                        break;
+                                }
+                            }
+                            
+
+                            Console.WriteLine("What file will we be loading up?");
+
+                            for (int i = 0; i < files.Length; i++)
+                            {
+                                if (files[i].Name == fileName)
+                                {
+                                    Console.WriteLine($@"{i}. {files[i].Name} <-- Current File");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($@"{i}. {files[i].Name}");
+                                }
+                            }
+
+                            input = Console.ReadLine();
+
+                            if(Convert.ToInt32(input) < files.Length)
+                            {
+                                fileName = files[Convert.ToInt32(input)].Name;
+                                fileString = LoadFile(fileName);
+                                shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
+                                {
+                                    TypeNameHandling = TypeNameHandling.Objects
+                                });
+
+                                loadFileLoop = !loadFileLoop;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid input");
+
+                                loadFileLoop = !loadFileLoop;
                             }
                         }
                         #endregion
                         break;
-                    case "7":
-                        bool saveLoop = true;
-                        while (saveLoop)
+                    case "6":
+                        #region save file
+                        bool saveFileLoop = true;
+
+                        while (saveFileLoop)
                         {
                             Console.WriteLine("What file would you like to save to?");
 
@@ -434,34 +502,138 @@ namespace Coderbyte_Math_App
                                 {
                                     Console.WriteLine($@"{i}. {files[i].Name}");
                                 }
+                            }
+                            Console.WriteLine("N. Create a New File");
 
-                                input = Console.ReadLine();
+                            input = Console.ReadLine();
 
-                                try
+                            try
+                            {
+                                switch (input)
                                 {
-                                    if (Convert.ToInt32(input) < files.Length)
-                                    {
-                                        fileName = files[Convert.ToInt32(input)].Name;
-                                        Console.WriteLine($"Saving to {fileName}... ");
+                                    case "N":
+                                    case "n":
+                                        bool newFileLoop = true;
 
-                                        SaveFile(shapes, fileName);
-                                        fileString = LoadFile(fileName);
+                                        while(newFileLoop)
+                                        {
+                                            Console.WriteLine("What would you like to call this new file?");
 
-                                        Console.Write("Success!");
+                                            input = Console.ReadLine();
+                                            string newFileName = input;
+                                            
+                                            if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}{newFileName}"))
+                                            {
+                                                Console.WriteLine("There's actually a file with that name already!" +
+                                                    "\nWould you want to overwrite it? (Y/N)");
+                                                input = Console.ReadLine();
 
-                                        Console.WriteLine(fileString);
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Invalid input");
-                                    }
-                                }
-                                catch (Exception e)
-                                {
-                                    Console.WriteLine("Sorry, that didn't work.\n\nERROR: {0}", e.Message);
+                                                switch (input)
+                                                {
+                                                    case "Y":
+                                                    case "y":
+                                                        Console.Write("Overwriting... ");
+                                                        SaveFile(shapes, $"{newFileName}.json");
+                                                        Console.WriteLine("Success!");
+
+                                                        newFileLoop = !newFileLoop;
+                                                        break;
+                                                    case "N":
+                                                    case "n":
+                                                        Console.WriteLine("We'll go back a step then.");
+                                                        break;
+                                                    default:
+                                                        Console.WriteLine("Invalid input");
+                                                        break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                Console.Write("Saving... ");
+                                                SaveFile(shapes, $"{newFileName}.json");
+                                                Console.WriteLine("Success!");
+
+                                                newFileLoop = !newFileLoop;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        if (Convert.ToInt32(input) < files.Length)
+                                        {
+                                            fileName = files[Convert.ToInt32(input)].Name;
+                                            Console.WriteLine($"Saving to {fileName}... ");
+
+                                            SaveFile(shapes, $"{fileName}");
+                                            fileString = LoadFile(fileName);
+
+                                            Console.Write("Success!");
+
+                                            saveFileLoop = !saveFileLoop;
+                                            input = "";
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Invalid input");
+                                        }
+                                        break;
                                 }
                             }
+                                catch (Exception e)
+                            {
+                                Console.WriteLine("Sorry, that didn't work.\n\nERROR: {0}", e.Message);
+                            }    
                         }
+                        saveFileLoop = !saveFileLoop;
+                        #endregion
+                        break;
+                    case "7":
+                        #region delete file
+                        Console.WriteLine("Which file would you like to delete?");
+
+                        for (int i = 0; i < files.Length; i++)
+                        {
+                            if (files[i].Name == fileName)
+                            {
+                                Console.WriteLine($@"{i}. {files[i].Name} <-- Current File");
+                            }
+                            else
+                            {
+                                Console.WriteLine($@"{i}. {files[i].Name}");
+                            }
+                        }
+
+                        input = Console.ReadLine();
+
+                        try
+                        {
+                            if (Convert.ToInt32(input) < files.Length)
+                            {
+                                Console.Write($"Deleting {files[Convert.ToInt32(input)].Name}... ");
+                                File.Delete($@"{filesDir}\{files[Convert.ToInt32(input)].Name}");
+                                Console.WriteLine("Success!");
+                                if (input == "0") input = "";
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid input");
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Sorry, we can only take numeric inputs for this.\n{0}", e.Message);
+                        }
+                        #endregion
+                        break;
+                    case "8":
+                        #region help dialogue
+                        Console.WriteLine("Here are helpful things to know!\n" +
+                            "\nIn this application, we refer to a group of shapes as a \"Collection\"." +
+                            "\nWe keep a collection of shapes that we can save into a save file (TODO)" +
+                            "\nso we may act on them later.\n" +
+                            "\nIt's also worth noting that you don't have to enter the perimeter or" +
+                            "\nthe surface area of any of the shapes! The CLI will guide you through" +
+                            "\nthe process to create each one.");
+                        #endregion
                         break;
                 }
             }
@@ -510,15 +682,18 @@ namespace Coderbyte_Math_App
         static void SaveFile(List<IShape> shapes, string fileName)
         {
             var saveDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\Files\");
-            var fullFileName = $@"{saveDir}\{fileName}";
+            var fullFileName = $@"{saveDir}{fileName}";
             var files = Directory.GetFiles(saveDir.FullName);
 
-            if (!files.Contains(fileName))
+            if (files.Contains(fileName) == false)
             {
-                File.Create(fullFileName);
+                File.Create(fullFileName).Close();
             }
 
-            string json = JsonConvert.SerializeObject(shapes, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(shapes, Formatting.Indented, new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Objects
+            });
 
             File.WriteAllText(fullFileName, json);
         }

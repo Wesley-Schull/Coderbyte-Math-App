@@ -554,6 +554,7 @@ namespace Coderbyte_Math_App
                                                 Console.WriteLine("Success!");
 
                                                 newFileLoop = !newFileLoop;
+                                                saveFileLoop = !saveFileLoop;
                                             }
                                         }
                                         break;
@@ -628,11 +629,20 @@ namespace Coderbyte_Math_App
                         #region help dialogue
                         Console.WriteLine("Here are helpful things to know!\n" +
                             "\nIn this application, we refer to a group of shapes as a \"Collection\"." +
-                            "\nWe keep a collection of shapes that we can save into a save file (TODO)" +
-                            "\nso we may act on them later.\n" +
+                            "\nWe keep a collection of shapes that we can save into a save file so we" +
+                            "\nmay act on them later.\n" +
                             "\nIt's also worth noting that you don't have to enter the perimeter or" +
                             "\nthe surface area of any of the shapes! The CLI will guide you through" +
-                            "\nthe process to create each one.");
+                            "\nthe process to create each one.\n" +
+                            "\nIn order to create a new file from scratch, what you should do is start" +
+                            "\nby creating a new collection (option 1 in the main menu). From here" +
+                            "\nyou may simply save to your currently loaded file, a new file, or a" +
+                            "\ndifferent file entirely to overwrite it (option 6). To add shapes to" +
+                            "\nyour collection, simply choose option 2 at the main menu, select the" +
+                            "\nshape you want, and follow the guided prompts.\n" +
+                            "\nYou may view your collection by choosing option 3 from the main menu." +
+                            "\nOption 4 will allow you sort your collection, either by perimeter or" +
+                            "\nsurface area, and either ascending (by default) or descending.");
                         #endregion
                         break;
                 }

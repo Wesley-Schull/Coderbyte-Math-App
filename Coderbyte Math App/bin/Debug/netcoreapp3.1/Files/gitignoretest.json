@@ -1,0 +1,16 @@
+[
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "testa",
+    "Radius": 1.0,
+    "Perimeter": 6.28,
+    "SurfaceArea": 3.14
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "testb",
+    "Radius": 1.0,
+    "Perimeter": 6.28,
+    "SurfaceArea": 3.14
+  }
+]

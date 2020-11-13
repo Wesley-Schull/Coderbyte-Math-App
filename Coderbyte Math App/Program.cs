@@ -92,10 +92,9 @@ namespace Coderbyte_Math_App
             {
                 files = filesDir.GetFiles("*.json");
 
-                while (initialLoadLoop)
+                if (files.Length > 0)
                 {
-
-                    if (files.Length > 0)
+                    while (initialLoadLoop)
                     {
                         Console.WriteLine("It looks like there are some saved files. Would you like to open one? (Y/N)");
 
@@ -182,7 +181,7 @@ namespace Coderbyte_Math_App
                                                         }
                                                         break;
                                                     default:
-                                                        initialLoadLoop = !initialLoadLoop;
+                                                        //initialLoadLoop = !initialLoadLoop;
                                                         break;
                                                 }
                                             }
@@ -245,15 +244,19 @@ namespace Coderbyte_Math_App
                         break;
                     case "2":
                         #region new shape
-                        Console.WriteLine("What kind of shape are we making?" +
-                            "\nC - Circle" +
-                            "\nS - Square" +
-                            "\nR - Rectangle" +
-                            "\nT - Triangle");
-                        switch (Console.ReadLine())
+                        Console.WriteLine("What kind of shape are we making? (Type the whole word, " +
+                            "\ni.e. 'circle', 'SqUaRe', 'canCEL')" +
+                            "\nCircle" +
+                            "\nSquare" +
+                            "\nRectangle" +
+                            "\nTriangle" +
+                            "\n\nCancel");
+
+                        input = Console.ReadLine().ToLower();
+
+                        switch (input)
                         {
-                            case "C":
-                            case "c":
+                            case "circle":
                                 #region circle
                                 Console.WriteLine("What would you like to call this circle?");
                                 string c_name = Console.ReadLine();
@@ -266,8 +269,7 @@ namespace Coderbyte_Math_App
                                 if (radius > 0) AddShapeToListCheck(shape, shapes);
                                 #endregion
                                 break;
-                            case "S":
-                            case "s":
+                            case "square":
                                 #region square
                                 Console.WriteLine("What would you like to call this square?");
                                 string s_name = Console.ReadLine();
@@ -280,8 +282,7 @@ namespace Coderbyte_Math_App
                                 if (s_length > 0) AddShapeToListCheck(shape, shapes);
                                 #endregion
                                 break;
-                            case "R":
-                            case "r":
+                            case "rectangle":
                                 #region rectangle
                                 Console.WriteLine("What would you like to call this rectangle?");
                                 string r_name = Console.ReadLine();
@@ -305,8 +306,7 @@ namespace Coderbyte_Math_App
                                 if (r_length > 0 && r_width > 0) AddShapeToListCheck(shape, shapes);
                                 #endregion
                                 break;
-                            case "T":
-                            case "t":
+                            case "triangle":
                                 #region triangle
                                 Console.WriteLine("What would you like to call this triangle?");
                                 string t_name = Console.ReadLine();
@@ -330,6 +330,8 @@ namespace Coderbyte_Math_App
                                     }
                                 }
                                 #endregion
+                                break;
+                            case "cancel":
                                 break;
                             default:
                                 Console.WriteLine("Invalid input");
@@ -358,78 +360,90 @@ namespace Coderbyte_Math_App
                         break;
                     case "4":
                         #region sort
-                        Console.WriteLine("What are we sorting by?" +
-                            "\nP - Perimeter" +
-                            "\nA - Surface Area");
-                        switch (Console.ReadLine())
+                        if(shapes.Count > 0)
                         {
-                            case "P":
-                            case "p":
-                                #region perimeter sort
-                                shapes.Sort((x, y) => x.Perimeter.CompareTo(y.Perimeter));
+                            Console.WriteLine("What are we sorting by?" +
+                            "\nP - Perimeter" +
+                            "\nA - Surface Area" +
+                            "\nC - Cancel");
+                            switch (Console.ReadLine())
+                            {
+                                case "P":
+                                case "p":
+                                    #region perimeter sort
+                                    shapes.Sort((x, y) => x.Perimeter.CompareTo(y.Perimeter));
 
-                                Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
-                                switch (Console.ReadLine())
-                                {
-                                    case "Y":
-                                    case "y":
-                                        shapes.Reverse();
-                                        Console.WriteLine($"Here's the result!\n");
-                                        foreach (IShape s in shapes)
-                                        {
-                                            Console.WriteLine(s.ToShapeString());
-                                        }
-                                        break;
-                                    case "N":
-                                    case "n":
-                                        Console.WriteLine($"Here's the result!\n");
-                                        foreach (IShape s in shapes)
-                                        {
-                                            Console.WriteLine(s.ToShapeString());
-                                        }
-                                        break;
-                                    default:
-                                        Console.WriteLine("Invalid input");
-                                        break;
-                                }
-                                #endregion
-                                break;
-                            case "A":
-                            case "a":
-                                #region surface area sort
-                                shapes.Sort((x, y) => x.SurfaceArea.CompareTo(y.SurfaceArea));
+                                    Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
+                                    switch (Console.ReadLine())
+                                    {
+                                        case "Y":
+                                        case "y":
+                                            shapes.Reverse();
+                                            Console.WriteLine($"Here's the result!\n");
+                                            foreach (IShape s in shapes)
+                                            {
+                                                Console.WriteLine(s.ToShapeString());
+                                            }
+                                            break;
+                                        case "N":
+                                        case "n":
+                                            Console.WriteLine($"Here's the result!\n");
+                                            foreach (IShape s in shapes)
+                                            {
+                                                Console.WriteLine(s.ToShapeString());
+                                            }
+                                            break;
+                                        default:
+                                            Console.WriteLine("Invalid input");
+                                            break;
+                                    }
+                                    #endregion
+                                    break;
+                                case "A":
+                                case "a":
+                                    #region surface area sort
+                                    shapes.Sort((x, y) => x.SurfaceArea.CompareTo(y.SurfaceArea));
 
-                                Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
-                                switch (Console.ReadLine())
-                                {
-                                    case "Y":
-                                    case "y":
-                                        shapes.Reverse();
-                                        Console.WriteLine($"Here's the result!\n");
-                                        foreach (IShape s in shapes)
-                                        {
-                                            Console.WriteLine(s.ToShapeString());
-                                        }
-                                        Console.WriteLine($"Here's the result!\n");
-                                        break;
-                                    case "N":
-                                    case "n":
-                                        Console.WriteLine($"Here's the result!\n");
-                                        foreach (IShape s in shapes)
-                                        {
-                                            Console.WriteLine(s.ToShapeString());
-                                        }
-                                        Console.WriteLine($"Here's the result!\n");
-                                        break;
-                                    default:
-                                        Console.WriteLine("Invalid input");
-                                        break;
-                                }
-                                #endregion
-                                break;
-                            default:
-                                Console.WriteLine("Invalid input");
-                                break;
+                                    Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
+                                    switch (Console.ReadLine())
+                                    {
+                                        case "Y":
+                                        case "y":
+                                            shapes.Reverse();
+                                            Console.WriteLine($"Here's the result!\n");
+                                            foreach (IShape s in shapes)
+                                            {
+                                                Console.WriteLine(s.ToShapeString());
+                                            }
+                                            Console.WriteLine($"Here's the result!\n");
+                                            break;
+                                        case "N":
+                                        case "n":
+                                            Console.WriteLine($"Here's the result!\n");
+                                            foreach (IShape s in shapes)
+                                            {
+                                                Console.WriteLine(s.ToShapeString());
+                                            }
+                                            Console.WriteLine($"Here's the result!\n");
+                                            break;
+                                        default:
+                                            Console.WriteLine("Invalid input");
+                                            break;
+                                    }
+                                    #endregion
+                                    break;
+                                case "C":
+                                case "c":
+                                    Console.WriteLine("Canceling operation");
+                                    break;
+                                default:
+                                    Console.WriteLine("Invalid input");
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("There aren't any shapes in your current collection to sort.");
                         }
                         #endregion
                         break;
@@ -527,25 +541,34 @@ namespace Coderbyte_Math_App
                                     Console.WriteLine($@"{i}. {files[i].Name}");
                                 }
                             }
+                            Console.WriteLine("C. Cancel");
 
                             input = Console.ReadLine();
 
-                            if (Convert.ToInt32(input) < files.Length)
+                            switch (input)
                             {
-                                fileName = files[Convert.ToInt32(input)].Name;
-                                fileString = LoadFile(fileName);
-                                shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
-                                {
-                                    TypeNameHandling = TypeNameHandling.Objects
-                                });
+                                case "C":
+                                case "c":
+                                    Console.WriteLine("Canceling operation");
+                                    loadFileLoop = !loadFileLoop;
+                                    break;
+                                default:
+                                    if (Convert.ToInt32(input) < files.Length)
+                                    {
+                                        fileName = files[Convert.ToInt32(input)].Name;
+                                        fileString = LoadFile(fileName);
+                                        shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
+                                        {
+                                            TypeNameHandling = TypeNameHandling.Objects
+                                        });
 
-                                loadFileLoop = !loadFileLoop;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input");
-
-                                loadFileLoop = !loadFileLoop;
+                                        loadFileLoop = !loadFileLoop;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Invalid input");
+                                    }
+                                    break;
                             }
                         }
                         #endregion
@@ -569,7 +592,8 @@ namespace Coderbyte_Math_App
                                     Console.WriteLine($@"{i}. {files[i].Name}");
                                 }
                             }
-                            Console.WriteLine("N. Create a New File");
+                            Console.WriteLine("N. Create a New File" +
+                                "\nC. Cancel");
 
                             input = Console.ReadLine();
 
@@ -577,6 +601,11 @@ namespace Coderbyte_Math_App
                             {
                                 switch (input)
                                 {
+                                    case "C":
+                                    case "c":
+                                        Console.WriteLine("Canceling operation");
+                                        saveFileLoop = !saveFileLoop;
+                                        break;
                                     case "N":
                                     case "n":
                                         bool newFileLoop = true;
@@ -668,26 +697,35 @@ namespace Coderbyte_Math_App
                                 Console.WriteLine($@"{i}. {files[i].Name}");
                             }
                         }
+                        Console.WriteLine("C. Cancel");
 
                         input = Console.ReadLine();
 
-                        try
+                        switch (input)
                         {
-                            if (Convert.ToInt32(input) < files.Length)
-                            {
-                                Console.Write($"Deleting {files[Convert.ToInt32(input)].Name}... ");
-                                File.Delete($@"{filesDir}\{files[Convert.ToInt32(input)].Name}");
-                                Console.WriteLine("Success!");
-                                if (input == "0") input = "";
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input");
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Sorry, we can only take numeric inputs for this.\n{0}", e.Message);
+                            case "C":
+                            case "c":
+                                break;
+                            default:
+                                try
+                                {
+                                    if (Convert.ToInt32(input) < files.Length)
+                                    {
+                                        Console.Write($"Deleting {files[Convert.ToInt32(input)].Name}... ");
+                                        File.Delete($@"{filesDir}\{files[Convert.ToInt32(input)].Name}");
+                                        Console.WriteLine("Success!");
+                                        if (input == "0") input = "";
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Invalid input");
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine("Sorry, we can only take numeric inputs for this.\n{0}", e.Message);
+                                }
+                                break;
                         }
                         #endregion
                         break;

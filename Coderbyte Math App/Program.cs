@@ -17,6 +17,66 @@ namespace Coderbyte_Math_App
     {
         static void Main(string[] args)
         {
+            Run();
+        }
+
+        static void AddShapeToListCheck(IShape shape, List<IShape> shapes)
+        {
+            Console.WriteLine($"Save {shape.Name} to the list? (Y/N)");
+            switch (Console.ReadLine())
+            {
+                case "Y":
+                case "y":
+                    Console.Write("Saving...");
+                    shapes.Add(shape);
+                    Console.WriteLine("Success!");
+                    break;
+                case "N":
+                case "n":
+                    Console.WriteLine($"{shape.Name} deleted");
+                    break;
+                default:
+                    Console.WriteLine("Incorrect input");
+                    break;
+            }
+        }
+
+        static void SaveFile(List<IShape> shapes, string fileName)
+        {
+            var saveDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\Files\");
+            var fullFileName = $@"{saveDir}{fileName}";
+            var files = Directory.GetFiles(saveDir.FullName);
+
+            if (files.Contains(fileName) == false)
+            {
+                File.Create(fullFileName).Close();
+            }
+
+            string json = JsonConvert.SerializeObject(shapes, Formatting.Indented, new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Objects
+            });
+
+            File.WriteAllText(fullFileName, json);
+        }
+
+        static string LoadFile(string fileName)
+        {
+            var saveDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\\Files");
+            var files = Directory.GetFiles(saveDir.FullName);
+
+            if (files.Contains($@"{saveDir.FullName}\{fileName}"))
+            {
+                return File.ReadAllText($@"{saveDir.FullName}\{fileName}");
+            }
+            else
+            {
+                return "File Not Found";
+            }
+        }
+
+        static void Run()
+        {
             List<IShape> shapes = new List<IShape>();
             IShape shape;
             var filesDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\\Files\\");
@@ -27,7 +87,7 @@ namespace Coderbyte_Math_App
             bool initialLoadLoop = true;
 
             Console.WriteLine("Welcome to the Coderbyte Math App!");
-            
+
             while (input != "0")
             {
                 files = filesDir.GetFiles("*.json");
@@ -45,7 +105,7 @@ namespace Coderbyte_Math_App
                         {
                             case "Y":
                             case "y":
-                                #region load file
+                                #region initial load file
                                 Console.WriteLine("Which file would you like to load?");
 
                                 for (int i = 0; i < files.Length; i++)
@@ -59,67 +119,78 @@ namespace Coderbyte_Math_App
                                         Console.WriteLine($@"{i}. {files[i].Name}");
                                     }
                                 }
+                                Console.WriteLine("C. Cancel");
 
                                 input = Console.ReadLine();
-                                
+
                                 try
                                 {
-                                    if (Convert.ToInt32(input) < files.Length)
+                                    switch (input)
                                     {
-                                        fileName = files[Convert.ToInt32(input)].Name;
-                                        Console.WriteLine($"Loading {fileName}...");
+                                        case "C":
+                                        case "c":
+                                            Console.WriteLine("No worries! You can load a file from the main menu at any time.");
+                                            initialLoadLoop = !initialLoadLoop;
+                                            break;
+                                        default:
+                                            if (Convert.ToInt32(input) < files.Length)
+                                            {
+                                                fileName = files[Convert.ToInt32(input)].Name;
+                                                Console.WriteLine($"Loading {fileName}...");
 
-                                        fileString = LoadFile(fileName);
-                                        shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
-                                        {
-                                            TypeNameHandling = TypeNameHandling.Objects
-                                        });
-
-                                        switch (fileString)
-                                        {
-                                            case "File Not Found":
-                                                Console.WriteLine($"Error: {fileString}");
-                                                break;
-                                            case "":
-                                                Console.WriteLine("Error: The file appears to be empty." +
-                                                    "\nWould you like to delete it? (Y/N)");
-
-                                                bool deleteEmptyFileLoop = true;
-
-                                                while (deleteEmptyFileLoop)
+                                                fileString = LoadFile(fileName);
+                                                shapes = JsonConvert.DeserializeObject<List<IShape>>(fileString, new JsonSerializerSettings
                                                 {
-                                                    input = Console.ReadLine();
+                                                    TypeNameHandling = TypeNameHandling.Objects
+                                                });
 
-                                                    switch (input)
-                                                    {
-                                                        case "Y":
-                                                        case "y":
-                                                            Console.Write($"Deleting {fileName}.json...");
-                                                            File.Delete($@"{filesDir}\{fileName}");
-                                                            Console.WriteLine("Success!");
+                                                switch (fileString)
+                                                {
+                                                    case "File Not Found":
+                                                        Console.WriteLine($"Error: {fileString}");
+                                                        break;
+                                                    case "":
+                                                        Console.WriteLine("Error: The file appears to be empty." +
+                                                            "\nWould you like to delete it? (Y/N)");
 
-                                                            deleteEmptyFileLoop = !deleteEmptyFileLoop;
-                                                            break;
-                                                        case "N":
-                                                        case "n":
-                                                            Console.WriteLine("I'll just leave this here then.");
+                                                        bool deleteEmptyFileLoop = true;
 
-                                                            deleteEmptyFileLoop = !deleteEmptyFileLoop;
-                                                            break;
-                                                        default:
-                                                            Console.WriteLine("Invalid input");
-                                                            break;
-                                                    }
+                                                        while (deleteEmptyFileLoop)
+                                                        {
+                                                            input = Console.ReadLine();
+
+                                                            switch (input)
+                                                            {
+                                                                case "Y":
+                                                                case "y":
+                                                                    Console.Write($"Deleting {fileName}.json...");
+                                                                    File.Delete($@"{filesDir}\{fileName}");
+                                                                    Console.WriteLine("Success!");
+
+                                                                    deleteEmptyFileLoop = !deleteEmptyFileLoop;
+                                                                    break;
+                                                                case "N":
+                                                                case "n":
+                                                                    Console.WriteLine("I'll just leave this here then.");
+
+                                                                    deleteEmptyFileLoop = !deleteEmptyFileLoop;
+                                                                    break;
+                                                                default:
+                                                                    Console.WriteLine("Invalid input");
+                                                                    break;
+                                                            }
+                                                        }
+                                                        break;
+                                                    default:
+                                                        initialLoadLoop = !initialLoadLoop;
+                                                        break;
                                                 }
-                                                break;
-                                            default:
-                                                initialLoadLoop = !initialLoadLoop;
-                                                break;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Invalid input");
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("Invalid input");
+                                            }
+                                            break;
                                     }
                                 }
                                 catch (Exception e)
@@ -441,7 +512,7 @@ namespace Coderbyte_Math_App
                                         break;
                                 }
                             }
-                            
+
 
                             Console.WriteLine("What file will we be loading up?");
 
@@ -459,7 +530,7 @@ namespace Coderbyte_Math_App
 
                             input = Console.ReadLine();
 
-                            if(Convert.ToInt32(input) < files.Length)
+                            if (Convert.ToInt32(input) < files.Length)
                             {
                                 fileName = files[Convert.ToInt32(input)].Name;
                                 fileString = LoadFile(fileName);
@@ -510,13 +581,13 @@ namespace Coderbyte_Math_App
                                     case "n":
                                         bool newFileLoop = true;
 
-                                        while(newFileLoop)
+                                        while (newFileLoop)
                                         {
                                             Console.WriteLine("What would you like to call this new file?");
 
                                             input = Console.ReadLine();
                                             string newFileName = input;
-                                            
+
                                             if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}{newFileName}"))
                                             {
                                                 Console.WriteLine("There's actually a file with that name already!" +
@@ -574,10 +645,10 @@ namespace Coderbyte_Math_App
                                         break;
                                 }
                             }
-                                catch (Exception e)
+                            catch (Exception e)
                             {
                                 Console.WriteLine("Sorry, that didn't work.\n\nERROR: {0}", e.Message);
-                            }    
+                            }
                         }
                         saveFileLoop = !saveFileLoop;
                         #endregion
@@ -641,80 +712,6 @@ namespace Coderbyte_Math_App
                         #endregion
                         break;
                 }
-            }
-            
-        }
-
-        static void MockShapeCollection(List<IShape> s)
-        {
-            s.Add(new Circle("Circle 1", 10));
-            s.Add(new Circle("Circle 2", 20));
-            s.Add(new Circle("Circle 3", 30));
-            s.Add(new Square("Square 1", 10));
-            s.Add(new Square("Square 2", 20));
-            s.Add(new Square("Square 3", 30));
-            s.Add(new Square("Square 4", 40));
-            s.Add(new Rectangle("Rectangle 1", 10, 15));
-            s.Add(new Rectangle("Rectangle 2", 20, 25));
-            s.Add(new Rectangle("Rectangle 3", 30, 35));
-            s.Add(new Rectangle("Rectangle 4", 40, 45));
-            s.Add(new Triangle("Triangle 1", 10, 10, 10));
-            s.Add(new Triangle("Triangle 2", 10, 15, 10));
-            s.Add(new Triangle("Triangle 3", 10, 15, 20));
-        }
-
-        static void AddShapeToListCheck(IShape shape, List<IShape> shapes)
-        {
-            Console.WriteLine($"Save {shape.Name} to the list? (Y/N)");
-            switch (Console.ReadLine())
-            {
-                case "Y":
-                case "y":
-                    Console.Write("Saving...");
-                    shapes.Add(shape);
-                    Console.WriteLine("Success!");
-                    break;
-                case "N":
-                case "n":
-                    Console.WriteLine($"{shape.Name} deleted");
-                    break;
-                default:
-                    Console.WriteLine("Incorrect input");
-                    break;
-            }
-        }
-
-        static void SaveFile(List<IShape> shapes, string fileName)
-        {
-            var saveDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\Files\");
-            var fullFileName = $@"{saveDir}{fileName}";
-            var files = Directory.GetFiles(saveDir.FullName);
-
-            if (files.Contains(fileName) == false)
-            {
-                File.Create(fullFileName).Close();
-            }
-
-            string json = JsonConvert.SerializeObject(shapes, Formatting.Indented, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects
-            });
-
-            File.WriteAllText(fullFileName, json);
-        }
-
-        static string LoadFile(string fileName)
-        {
-            var saveDir = new DirectoryInfo($@"{Directory.GetCurrentDirectory()}\\Files");
-            var files = Directory.GetFiles(saveDir.FullName);
-
-            if (files.Contains($@"{saveDir.FullName}\{fileName}"))
-            {
-                return File.ReadAllText($@"{saveDir.FullName}\{fileName}");
-            }
-            else
-            {
-                return "File Not Found";
             }
         }
     }

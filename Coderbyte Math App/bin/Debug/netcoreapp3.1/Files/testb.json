@@ -1,0 +1,113 @@
+[
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "Circle 1",
+    "Radius": 10.0,
+    "Perimeter": 62.8,
+    "SurfaceArea": 314.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "Circle 2",
+    "Radius": 20.0,
+    "Perimeter": 125.6,
+    "SurfaceArea": 1256.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Circle, Coderbyte Math App",
+    "Name": "Circle 3",
+    "Radius": 30.0,
+    "Perimeter": 188.4,
+    "SurfaceArea": 2826.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "Square 1",
+    "Perimeter": 40.0,
+    "SurfaceArea": 100.0,
+    "Length": 10.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "Square 2",
+    "Perimeter": 80.0,
+    "SurfaceArea": 400.0,
+    "Length": 20.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "Square 3",
+    "Perimeter": 120.0,
+    "SurfaceArea": 900.0,
+    "Length": 30.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Square, Coderbyte Math App",
+    "Name": "Square 4",
+    "Perimeter": 160.0,
+    "SurfaceArea": 1600.0,
+    "Length": 40.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Rectangle, Coderbyte Math App",
+    "Name": "Rectangle 1",
+    "Perimeter": 50.0,
+    "SurfaceArea": 150.0,
+    "Length": 10.0,
+    "Width": 15.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Rectangle, Coderbyte Math App",
+    "Name": "Rectangle 2",
+    "Perimeter": 90.0,
+    "SurfaceArea": 500.0,
+    "Length": 20.0,
+    "Width": 25.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Rectangle, Coderbyte Math App",
+    "Name": "Rectangle 3",
+    "Perimeter": 130.0,
+    "SurfaceArea": 1050.0,
+    "Length": 30.0,
+    "Width": 35.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Rectangle, Coderbyte Math App",
+    "Name": "Rectangle 4",
+    "Perimeter": 170.0,
+    "SurfaceArea": 1800.0,
+    "Length": 40.0,
+    "Width": 45.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Triangle, Coderbyte Math App",
+    "Name": "Triangle 1",
+    "Perimeter": 30.0,
+    "SurfaceArea": 43.3,
+    "TriangleType": "Equilateral",
+    "SideA": 10.0,
+    "SideB": 10.0,
+    "SideC": 10.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Triangle, Coderbyte Math App",
+    "Name": "Triangle 2",
+    "Perimeter": 35.0,
+    "SurfaceArea": 49.61,
+    "TriangleType": "Isosceles",
+    "SideA": 10.0,
+    "SideB": 15.0,
+    "SideC": 10.0
+  },
+  {
+    "$type": "Coderbyte_Math_App.Classes.Triangle, Coderbyte Math App",
+    "Name": "Triangle 3",
+    "Perimeter": 45.0,
+    "SurfaceArea": 72.62,
+    "TriangleType": "Scalene",
+    "SideA": 10.0,
+    "SideB": 15.0,
+    "SideC": 20.0
+  }
+]

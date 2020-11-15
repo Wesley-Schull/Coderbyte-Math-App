@@ -22,8 +22,8 @@ namespace Coderbyte_Math_App
 
         static void AddShapeToListCheck(IShape shape, List<IShape> shapes)
         {
-            Console.WriteLine($"Save {shape.Name} to the list? (Y/N)");
-            switch (Console.ReadLine())
+            Console.WriteLine($"Save \"{shape.Name}\" to the list? (Y/N)");
+            switch (GetUserInput())
             {
                 case "Y":
                 case "y":
@@ -98,7 +98,7 @@ namespace Coderbyte_Math_App
                     {
                         Console.WriteLine("It looks like there are some saved files. Would you like to open one? (Y/N)");
 
-                        input = Console.ReadLine();
+                        input = GetUserInput();
 
                         switch (input)
                         {
@@ -120,7 +120,7 @@ namespace Coderbyte_Math_App
                                 }
                                 Console.WriteLine("C. Cancel");
 
-                                input = Console.ReadLine();
+                                input = GetUserInput();
 
                                 try
                                 {
@@ -156,7 +156,7 @@ namespace Coderbyte_Math_App
 
                                                         while (deleteEmptyFileLoop)
                                                         {
-                                                            input = Console.ReadLine();
+                                                            input = GetUserInput();
 
                                                             switch (input)
                                                             {
@@ -221,7 +221,7 @@ namespace Coderbyte_Math_App
                     "\n7. Delete file" +
                     "\n8. Help");
 
-                input = Console.ReadLine();
+                input = GetUserInput();
 
                 switch (input)
                 {
@@ -232,14 +232,10 @@ namespace Coderbyte_Math_App
                         #region new shapes list
                         shapes = new List<IShape>();
 
-                        Console.WriteLine($"The new list has been created! Just know" +
-                                          $"\nthat if you save your current file, the" +
-                                          $"\nentire previous list will be replaced by" +
-                                          $"\nthis new one." +
-                                          $"\n" +
-                                          $"\nIf you would like to go back to the old" +
-                                          $"\nlist, simple load this file again: it'll" +
-                                          $"\nbe marked when you go to Load file!");
+                        Console.WriteLine($"The new list has been created! Just know that if you load a new file without " +
+                                        $"\nsaving, the list you have now will be replaced by the loaded one. If you want" +
+                                        $"\nto completely overwrite a list in any file, simply load it, use this command," +
+                                        $"\nand save back to that file. It will be marked when you enter the save menu.");
                         #endregion
                         break;
                     case "2":
@@ -252,30 +248,30 @@ namespace Coderbyte_Math_App
                             "\n- Triangle" +
                             "\n- Cancel");
 
-                        input = Console.ReadLine().ToLower();
+                        input = GetUserInput().ToLower();
 
                         switch (input)
                         {
                             case "circle":
                                 #region circle
                                 Console.WriteLine("What would you like to call this circle?");
-                                string c_name = Console.ReadLine();
+                                string c_name = GetUserInput();
 
                                 Console.WriteLine("Radius:");
-                                double radius = Convert.ToDouble(Console.ReadLine());
+                                double radius = GetUserInputAsDouble();
 
                                 shape = new Circle(c_name, radius);
-
+                                
                                 if (radius > 0) AddShapeToListCheck(shape, shapes);
                                 #endregion
                                 break;
                             case "square":
                                 #region square
                                 Console.WriteLine("What would you like to call this square?");
-                                string s_name = Console.ReadLine();
+                                string s_name = GetUserInput();
 
                                 Console.WriteLine("Length:");
-                                double s_length = Convert.ToDouble(Console.ReadLine());
+                                double s_length = GetUserInputAsDouble();
 
                                 shape = new Square(s_name, s_length);
 
@@ -285,12 +281,12 @@ namespace Coderbyte_Math_App
                             case "rectangle":
                                 #region rectangle
                                 Console.WriteLine("What would you like to call this rectangle?");
-                                string r_name = Console.ReadLine();
+                                string r_name = GetUserInput();
 
                                 Console.WriteLine("Length:");
-                                double r_length = Convert.ToDouble(Console.ReadLine());
+                                double r_length = GetUserInputAsDouble();
                                 Console.WriteLine("Width:");
-                                double r_width = Convert.ToDouble(Console.ReadLine());
+                                double r_width = GetUserInputAsDouble();
 
                                 if (r_length == r_width && r_length > 0)
                                 {
@@ -309,17 +305,18 @@ namespace Coderbyte_Math_App
                             case "triangle":
                                 #region triangle
                                 Console.WriteLine("What would you like to call this triangle?");
-                                string t_name = Console.ReadLine();
+                                string t_name = GetUserInput();
                                 bool triangleInvalid = true;
 
                                 while (triangleInvalid)
                                 {
+                                    
                                     Console.WriteLine("Side A:");
-                                    double a = Convert.ToDouble(Console.ReadLine());
+                                    double a = GetUserInputAsDouble();
                                     Console.WriteLine("Side B:");
-                                    double b = Convert.ToDouble(Console.ReadLine());
+                                    double b = GetUserInputAsDouble();
                                     Console.WriteLine("Side C:");
-                                    double c = Convert.ToDouble(Console.ReadLine());
+                                    double c = GetUserInputAsDouble();
 
                                     shape = new Triangle(t_name, a, b, c);
 
@@ -366,7 +363,9 @@ namespace Coderbyte_Math_App
                             "\nP - Perimeter" +
                             "\nA - Surface Area" +
                             "\nC - Cancel");
-                            switch (Console.ReadLine())
+
+                            input = GetUserInput();
+                            switch (input)
                             {
                                 case "P":
                                 case "p":
@@ -374,7 +373,10 @@ namespace Coderbyte_Math_App
                                     shapes.Sort((x, y) => x.Perimeter.CompareTo(y.Perimeter));
 
                                     Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
-                                    switch (Console.ReadLine())
+
+                                    input = GetUserInput();
+
+                                    switch (input)
                                     {
                                         case "Y":
                                         case "y":
@@ -405,7 +407,10 @@ namespace Coderbyte_Math_App
                                     shapes.Sort((x, y) => x.SurfaceArea.CompareTo(y.SurfaceArea));
 
                                     Console.WriteLine("Do you want that in descending (largest-to-smallest) order? (Y/N)");
-                                    switch (Console.ReadLine())
+
+                                    input = GetUserInput();
+
+                                    switch (input)
                                     {
                                         case "Y":
                                         case "y":
@@ -455,7 +460,7 @@ namespace Coderbyte_Math_App
                             Console.WriteLine("Would you like to save your work before loading up" +
                                 "\nanother file? (Y/N)" +
                                 "\n(NOTE: This will overwrite the file you currently have loaded.)");
-                            input = Console.ReadLine();
+                            input = GetUserInput();
 
                             bool saveWorkLoop = true;
 
@@ -470,7 +475,7 @@ namespace Coderbyte_Math_App
                                             Console.WriteLine("It appears we aren't working in a loaded save file." +
                                                 "\nLet's create a new one!" +
                                                 "\nWhat would you like to call this new file?");
-                                            input = Console.ReadLine();
+                                            input = GetUserInput();
 
                                             if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}\{input}.json"))
                                             {
@@ -482,7 +487,7 @@ namespace Coderbyte_Math_App
                                                     Console.WriteLine($"It looks like {input}.json already exists!" +
                                                         $"\nOverwrite this file? (Y/N)");
 
-                                                    input = Console.ReadLine();
+                                                    input = GetUserInput();
 
                                                     switch (input)
                                                     {
@@ -543,7 +548,7 @@ namespace Coderbyte_Math_App
                             }
                             Console.WriteLine("C. Cancel");
 
-                            input = Console.ReadLine();
+                            input = GetUserInput();
 
                             switch (input)
                             {
@@ -595,7 +600,7 @@ namespace Coderbyte_Math_App
                             Console.WriteLine("N. Create a New File" +
                                 "\nC. Cancel");
 
-                            input = Console.ReadLine();
+                            input = GetUserInput();
 
                             try
                             {
@@ -614,14 +619,15 @@ namespace Coderbyte_Math_App
                                         {
                                             Console.WriteLine("What would you like to call this new file?");
 
-                                            input = Console.ReadLine();
+                                            input = GetUserInput();
                                             string newFileName = input;
 
                                             if (Directory.GetFiles(filesDir.Name).Contains($@"{filesDir}{newFileName}"))
                                             {
                                                 Console.WriteLine("There's actually a file with that name already!" +
                                                     "\nWould you want to overwrite it? (Y/N)");
-                                                input = Console.ReadLine();
+                                                
+                                                input = GetUserInput();
 
                                                 switch (input)
                                                 {
@@ -699,7 +705,7 @@ namespace Coderbyte_Math_App
                         }
                         Console.WriteLine("C. Cancel");
 
-                        input = Console.ReadLine();
+                        input = GetUserInput();
 
                         switch (input)
                         {
@@ -751,6 +757,38 @@ namespace Coderbyte_Math_App
                         break;
                 }
             }
+        }
+
+        static string GetUserInput()
+        {
+            string input;
+
+            Console.Write("\n> ");
+            input = Console.ReadLine();
+            Console.WriteLine("\n");
+
+            return input;
+        }
+
+        static double GetUserInputAsDouble()
+        {
+            string input;
+            double output = 0;
+
+            Console.Write("\n> ");
+            input = Console.ReadLine();
+            Console.WriteLine("\n");
+
+            try
+            {
+                output = Convert.ToDouble(input);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+            return output;
         }
     }
 }

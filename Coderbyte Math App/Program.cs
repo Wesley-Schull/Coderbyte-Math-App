@@ -246,11 +246,11 @@ namespace Coderbyte_Math_App
                         #region new shape
                         Console.WriteLine("What kind of shape are we making? (Type the whole word, " +
                             "\ni.e. 'circle', 'SqUaRe', 'canCEL')" +
-                            "\nCircle" +
-                            "\nSquare" +
-                            "\nRectangle" +
-                            "\nTriangle" +
-                            "\n\nCancel");
+                            "\n- Circle" +
+                            "\n- Square" +
+                            "\n- Rectangle" +
+                            "\n- Triangle" +
+                            "\n- Cancel");
 
                         input = Console.ReadLine().ToLower();
 

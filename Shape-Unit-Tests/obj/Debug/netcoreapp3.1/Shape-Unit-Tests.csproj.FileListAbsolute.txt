@@ -1,4 +1,0 @@
-X:\Code Projects\Coderbyte-Math-App\Shape-Unit-Tests\obj\Debug\netcoreapp3.1\Shape-Unit-Tests.csprojAssemblyReference.cache
-X:\Code Projects\Coderbyte-Math-App\Shape-Unit-Tests\obj\Debug\netcoreapp3.1\Shape-Unit-Tests.AssemblyInfoInputs.cache
-X:\Code Projects\Coderbyte-Math-App\Shape-Unit-Tests\obj\Debug\netcoreapp3.1\Shape-Unit-Tests.AssemblyInfo.cs
-X:\Code Projects\Coderbyte-Math-App\Shape-Unit-Tests\obj\Debug\netcoreapp3.1\Shape-Unit-Tests.csproj.CoreCompileInputs.cache
